@@ -10,6 +10,9 @@ void main() {
 
   countSigns([1,4,-3,0,2,6,1,0,-4,-3]);
   List<int> list_num = transformList([1,4,6,7,9,-3,2], (x) => x - 2);
+  print(list_num);
+  print(sumDigits(8));
+  print(sumDigits(18));
 }
 
 //Задание 1
@@ -77,4 +80,10 @@ List<int> transformList(List<int> numbers, int Function(int) preobraz) {
 }
 
 //Задание 5
+int? sumDigits(number) {
+  if (number < 10) {
+    return number;
+  }
 
+  return (number%10) + sumDigits(number ~/ 10);
+}
